@@ -161,8 +161,8 @@
                 "text": "Customer"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -259,9 +259,27 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "035e5a1d-ee77-4cb9-aca8-f078ffe6ccfb",
+                  "title": "Session Hijacking",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Penyerang mencuri atau mengambil alih sesi pengguna.",
+                  "mitigation": "- Menerapkan session ID yang unik\n- Menerapkan time out tiap sesi\n- Menerapkan Multi Factor Authentication (MFA)",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 0
+              }
             }
           },
           {
@@ -398,11 +416,13 @@
                 "text": "Payment DB"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -499,20 +519,54 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "c76aff9f-9a17-42af-89a7-5df97373fdd7",
+                  "title": "Data Manipulation",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Penyerang memodifikasi data yang tersimpan di database.",
+                  "mitigation": "- Menerapkan version control\n- Menerapkan fitur integrity control pada database\n- Mengenkripsi data yang sedang ditransmisikan",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": ""
+                },
+                {
+                  "id": "2d485b32-fa85-4f5f-8978-d40f23876638",
+                  "title": "Data Breach",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Penyerang mencuri data-data penting yang tersimpan di database.",
+                  "mitigation": "- Backup data secara berkala\n- Update sistem secara rutin\n- Menggunakan Intrusion Detection System (IDS)",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             }
           },
           {
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -533,12 +587,31 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "c78025a0-cf89-4adb-a2ab-46a7ad81b64e",
+                  "title": "Distributed Denial of Service",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "Penyerang mengirimkan banyak request dalam waktu bersamaan.",
+                  "mitigation": "- Menerapkan rate limiting\n- Meningkatkan kapasitas server\n- Menerapkan CAPTCHA",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1
+              }
             },
             "labels": [
               "1. Check Out"
@@ -614,7 +687,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -635,12 +709,44 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "e386826b-9687-45ec-8d12-a26c5ac1a5b5",
+                  "title": "SQL Injection",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Penyerang dapat memasukkan query melalui form pembayaran dan berpotensi mencuri data pengguna.",
+                  "mitigation": "- Menggunakan Web Application Firewall (WAF)\n- Menggunakan parameterized queries",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                },
+                {
+                  "id": "6761ac27-af8e-4f33-9576-c3fd03fabeab",
+                  "title": "Data Interception",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Penyerang memantau/menangkap data yang sedang dikirim dalam jaringan.",
+                  "mitigation": "- Menerapkan zero trust architecture\n- Menggunakan sertifikat digital (SSL/TLS)",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "3. Pembayaran"
@@ -658,6 +764,10 @@
               {
                 "x": 280,
                 "y": 120
+              },
+              {
+                "x": 350,
+                "y": 120
               }
             ]
           },
@@ -665,7 +775,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -686,12 +797,31 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "11cca971-3be9-47e3-842a-cd0cd002c5a7",
+                  "title": "Distributed Denial of Service",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Penyerang mengirimkan banyak request dalam waktu bersamaan.",
+                  "mitigation": "- Menggunakan Web Application Firewall (WAF)\n- Menggunakan parameterized queries",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "4. Request Pembayaran"
@@ -708,6 +838,10 @@
             "vertices": [
               {
                 "x": 490,
+                "y": 130
+              },
+              {
+                "x": 540,
                 "y": 130
               }
             ]
@@ -875,23 +1009,14 @@
                 "x": 490,
                 "y": 240
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -912,12 +1037,31 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "c49b71a8-cd0d-4dd6-abb3-da45a8b11da3",
+                  "title": "Data Tampering",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Penyerang mengubah status pembayaran yang sudah selesai.",
+                  "mitigation": "- Menerapkan version control\n- Menerapkan fitur integrity control pada database\n- Mengenkripsi data yang sedang ditransmisikan",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "8. Update Status Pembayaran"
@@ -934,6 +1078,10 @@
             "vertices": [
               {
                 "x": 290,
+                "y": 240
+              },
+              {
+                "x": 250,
                 "y": 240
               }
             ]
@@ -980,14 +1128,14 @@
             "labels": [
               "Trust Boundary"
             ],
-            "id": "97058529-ea64-4788-98d9-1228d1d45de2",
+            "id": "fda7312f-a11b-40df-90bf-e084b77b4744",
             "source": {
-              "x": 390,
+              "x": 650,
               "y": -10
             },
             "target": {
-              "x": 590,
-              "y": 360
+              "x": 910,
+              "y": 370
             }
           },
           {
@@ -1006,13 +1154,13 @@
             "labels": [
               "Trust Boundary"
             ],
-            "id": "fda7312f-a11b-40df-90bf-e084b77b4744",
+            "id": "97058529-ea64-4788-98d9-1228d1d45de2",
             "source": {
-              "x": 650,
+              "x": 390,
               "y": -10
             },
             "target": {
-              "x": 910,
+              "x": 680,
               "y": 370
             }
           }
@@ -1021,6 +1169,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Dosen TKKS / Reviewer Internal",
-    "threatTop": 8
+    "threatTop": 17
   }
 }
