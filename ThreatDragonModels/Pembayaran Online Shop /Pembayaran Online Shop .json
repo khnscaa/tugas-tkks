@@ -1,0 +1,36 @@
+{
+  "version": "2.5.0",
+  "summary": {
+    "title": "Pembayaran Online Shop ",
+    "owner": "Khansa ",
+    "description": "Sistem pembayaran untuk platform online shop yang memungkinkan user melakukan checkout, memilih metode pembayaran (transfer bank, e-wallet, COD), dan memproses transaksi melalui payment gateway. Sistem mencakup autentikasi pengguna, pemrosesan order, komunikasi antara front-end, backend, dan payment gateway eksternal.\n",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [
+      {
+        "name": "Khansa Izza Aulia"
+      },
+      {
+        "name": "Nasywa Divi Anasitasia"
+      },
+      {
+        "name": "Devinta Athaa Nafiis"
+      }
+    ],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "Diagram Pembayaran Online Shop\"",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.5.0",
+        "cells": []
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "Dosen TKKS / Reviewer Internal",
+    "threatTop": 0
+  }
+}
